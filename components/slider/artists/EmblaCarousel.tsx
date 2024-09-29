@@ -1,13 +1,8 @@
 "use client"
 
-import React, { useCallback, useContext } from 'react'
+import React, { useContext } from 'react'
 import { AudioContext } from '@/context/AudioContext'
-import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel'
-// import {
-//   PrevButton,
-//   NextButton,
-//   usePrevNextButtons
-// } from './EmblaCarouselArrowButtons'
+import { EmblaOptionsType } from 'embla-carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
@@ -19,19 +14,8 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { options } = props
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
+  const [emblaRef] = useEmblaCarousel(options, [Autoplay()])
 
-  const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
-    const autoplay = emblaApi?.plugins()?.autoplay
-    if (!autoplay) return
-  }, [])
-
-  // const {
-  //   prevBtnDisabled,
-  //   nextBtnDisabled,
-  //   onPrevButtonClick,
-  //   onNextButtonClick
-  // } = usePrevNextButtons(emblaApi, onNavButtonClick)
   const tracks = [
     {
       title: 'Ghetto Anthem',
