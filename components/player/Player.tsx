@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { AudioContext } from '@/context/AudioContext';
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 
 const Player = () => {

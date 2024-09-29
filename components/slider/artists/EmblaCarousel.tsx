@@ -3,11 +3,11 @@
 import React, { useCallback, useContext } from 'react'
 import { AudioContext } from '@/context/AudioContext'
 import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel'
-import {
-  PrevButton,
-  NextButton,
-  usePrevNextButtons
-} from './EmblaCarouselArrowButtons'
+// import {
+//   PrevButton,
+//   NextButton,
+//   usePrevNextButtons
+// } from './EmblaCarouselArrowButtons'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
