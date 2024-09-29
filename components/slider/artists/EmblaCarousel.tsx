@@ -18,7 +18,7 @@ type PropType = {
 }
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
-  const { slides, options } = props
+  const { options } = props
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()])
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -26,12 +26,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     if (!autoplay) return
   }, [])
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi, onNavButtonClick)
+  // const {
+  //   prevBtnDisabled,
+  //   nextBtnDisabled,
+  //   onPrevButtonClick,
+  //   onNextButtonClick
+  // } = usePrevNextButtons(emblaApi, onNavButtonClick)
   const tracks = [
     {
       title: 'Ghetto Anthem',
@@ -82,7 +82,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
       audio: "/a4.mp3"
     },
   ]
-  const { audio, setAudio } = useContext(AudioContext)
+  const { setAudio } = useContext(AudioContext)
 
   return (
     <section className="embla w-full">

@@ -6,8 +6,8 @@ import { useContext, useState } from "react";
 
 const Player = () => {
 
-    const [playing, setPlaying] = useState(false);
-    const { audio, setAudio } = useContext(AudioContext)
+    // const [playing, setPlaying] = useState(false);
+    const { audio } = useContext(AudioContext)
     return (
         <div className="fixed bottom-0 left-0 w-full z-10">
             {audio.artist ?
