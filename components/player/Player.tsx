@@ -11,7 +11,8 @@ const Player = () => {
     const [showPlayer, setsetShowPlayer] = useState(true);
     const { audio } = useContext(AudioContext);
     const audioElement = useRef<HTMLAudioElement>(null);
-    const [audioProgress, setAudioProgress] = useState(0); // Track audio progress
+    // Track audio progress
+    const [audioProgress, setAudioProgress] = useState(0);
 
     useEffect(() => {
         const audio = document.getElementById('mainAudio') as HTMLAudioElement;
