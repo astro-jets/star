@@ -40,7 +40,7 @@ const Player = () => {
                 audio.removeEventListener('timeupdate', handleTimeUpdate);
             };
         }
-    }, [isPlaying]);
+    }, [isPlaying, audio]);
 
     const handleSeek = (value: number) => {
         if (audioElement.current) {
