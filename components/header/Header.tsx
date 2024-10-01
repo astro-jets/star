@@ -13,7 +13,7 @@ const Header = () => {
                 <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
                     <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                         <Link href="/" className="flex items-center">
-                            <Image height={200} width={500} src="/images/logo.png" className="h-10 w-30 object-contain mr-3 sm:h-9" alt="Landwind Logo" />
+                            <Image height={560} width={1000} src="/images/gospel.png" className="h-full w-40 object-contain mr-3 sm:h-9" alt="Landwind Logo" />
                         </Link>
                         <div className="flex items-center lg:order-2">
                             <div className="hidden mt-2 mr-4 sm:inline-block">
