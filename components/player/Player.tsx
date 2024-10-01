@@ -3,9 +3,8 @@ import Image from "next/image";
 import { AudioContext } from '@/context/AudioContext';
 import { useContext, useEffect, useRef, useState } from "react";
 import Slider from "react-slider";
-import { BsChevronDoubleDown, BsChevronDoubleUp, BsDownload, BsForward, BsPlay, BsSkipForward } from "react-icons/bs";
+import { BsChevronDoubleDown, BsChevronDoubleUp, BsDownload, BsPlay } from "react-icons/bs";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
-import Link from "next/link";
 
 
 const Player = () => {
