@@ -67,6 +67,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     },
   ]
   const { setAudio } = useContext(AudioContext)
+  const { setPlaylist } = useContext(AudioContext)
 
   return (
     <section className="embla w-full">
@@ -74,7 +75,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container space-x-5 w-full">
           {
             tracks.map(track => (
-              <Image loading='lazy' height={550} width={550} key={track.audio} className="w-30 h-30  md:w-45 md:h-45  cursor-pointer rounded-full" onClick={() => { setAudio(track) }} src={track.avatar} alt="" />
+              <Image loading='lazy' height={550} width={550} key={track.audio} className="w-30 h-30  md:w-45 md:h-45  cursor-pointer rounded-full" onClick={() => { setAudio(track), setPlaylist(tracks) }} src={track.avatar} alt="" />
             ))
           }
         </div>

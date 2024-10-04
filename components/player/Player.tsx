@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
-import { AudioContext } from '@/context/AudioContext';
-import { useContext, useEffect, useRef, useState } from "react";
+import { useAudio } from '@/context/AudioContext';
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slider";
 import { BsChevronDoubleDown, BsChevronDoubleUp, BsDownload, BsPlay } from "react-icons/bs";
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
@@ -11,7 +11,7 @@ const Player = () => {
 
     const [isPlaying, setIsPlaying] = useState(true);
     const [showPlayer, setsetShowPlayer] = useState(true);
-    const { audio } = useContext(AudioContext);
+    const { audio, nextTrack, prevTrack } = useAudio();
     const audioElement = useRef<HTMLAudioElement>(null);
     // Track audio progress
     const [audioProgress, setAudioProgress] = useState(0);
@@ -91,7 +91,7 @@ const Player = () => {
                                     <BsChevronDoubleUp color="white" size={20} />
                                 }
                             </button>
-                            <button type="button" aria-label="Rewind 10 seconds">
+                            <button type="button" onClick={() => { prevTrack() }}>
                                 <BiSkipPrevious size={40} color="white" />
                             </button>
                         </div>
@@ -106,7 +106,7 @@ const Player = () => {
                             }
                         </button>
                         <div className="flex-auto flex items-center justify-evenly">
-                            <button type="button" aria-label="Skip 10 seconds" className="">
+                            <button type="button" onClick={() => { nextTrack() }}>
                                 <BiSkipNext size={40} color="white" />
                             </button>
                             <a download target="_blank" href={audio.audio} className=" text-xs leading-6 font-semibold p-2 rounded-full  ring-inset ring-slate-500 text-slate-800  dark:text-slate-100 dark:ring-0 transition-all duration-500 dark:bg-slate-500">
