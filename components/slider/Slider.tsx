@@ -26,8 +26,8 @@ function Slider() {
 
             <div className="relative w-full hover-img max-h-[40vh] md:h-full md:max-h-full overflow-hidden">
                 <a href="#" className='flex flex-col relative h-full md:h-full md:max-h-full'>
-                    <Image height={1024} width={1024} className="w-full mx-auto  object-cover h-[40vh]  md:h-[70vh] md:max-h-full" src='/images/mlw.jpg' alt="Image description" />
-                    <p className='absolute bottom-0 z-10 left-0 flex p-1 bg-[#111111a2] h-14 w-full text-white'> Shammah Vocals to perform at Kamuzu satudium</p>
+                    <Image height={1024} width={1024} className="w-full mx-auto  object-cover h-[40vh]  md:h-[70vh] md:max-h-full" src='/images/Grad.jpg' alt="Image description" />
+                    <p className='absolute bottom-0 z-10 left-0 flex p-1 bg-[#111111a2] h-14 w-full text-white'> Star E launches their gospel website</p>
                 </a>
             </div>
 
@@ -39,7 +39,7 @@ function Slider() {
             </div>
             <div className="relative w-full hover-img max-h-[40vh] md:h-full md:max-h-full overflow-hidden">
                 <a href="#" className='flex flex-col relative h-full md:h-full md:max-h-full'>
-                    <Image height={1024} width={1024} className="w-full mx-auto  object-cover h-[40vh]  md:h-[70vh] md:max-h-full" src='/images/Grad.jpg' alt="Image description" />
+                    <Image height={1024} width={1024} className="w-full mx-auto  object-cover h-[40vh]  md:h-[70vh] md:max-h-full" src='/images/shammah.jpg' alt="Image description" />
                     <p className='absolute bottom-0 z-10 left-0 flex p-1 bg-[#111111a2] h-14 w-full text-white'> Shammah Vocals to perform at Kamuzu satudium</p>
                 </a>
             </div>

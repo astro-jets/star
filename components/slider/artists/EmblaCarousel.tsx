@@ -18,52 +18,52 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   const tracks = [
     {
-      title: 'Ghetto Anthem',
-      artist: "Chizmo",
-      avatar: "/images/chizmo.jpg",
-      audio: "/a1.mp3"
+      title: 'Kumwamba',
+      artist: "Kelvin Sings",
+      avatar: "/images/kumwamba.jpg",
+      audio: "/kumwamba.mp3"
     },
     {
-      title: 'Curren$y',
-      artist: "Bal Habour Brunch",
-      avatar: "/images/sok.jpg",
-      audio: "/a2.mp3"
+      title: 'Kudziwike',
+      artist: "Clara Ngulube",
+      avatar: "/images/clara.jpg",
+      audio: "/kudziwike.mp3"
     },
     {
-      title: 'Afana Ceez',
-      artist: "kuno ayi",
-      avatar: "/images/abale.jpg",
-      audio: "/a3.mp3"
+      title: 'Ebenezer',
+      artist: "Shammah Vocals",
+      avatar: "/images/ebenezer.jpg",
+      audio: "/ebenezer.mp3"
     },
     {
-      title: 'Obhebha',
-      artist: "Mercah ft Namadingo",
-      avatar: "/images/mlw.jpg",
-      audio: "/a4.mp3"
+      title: 'Yehova',
+      artist: "Ethel Kamwendo Banda",
+      avatar: "/images/yehova.jpg",
+      audio: "/yehova.mp3"
     },
     {
-      title: 'Ghetto Anthem',
-      artist: "Chizmo",
-      avatar: "/images/chizmo.jpg",
-      audio: "/a1.mp3"
+      title: 'Ana ake',
+      artist: "Clara Ngulube",
+      avatar: "/images/clara.jpg",
+      audio: "/anaake.mp3"
     },
     {
-      title: 'Curren$y',
-      artist: "Bal Habour Brunch",
-      avatar: "/images/sok.jpg",
-      audio: "/a2.mp3"
+      title: 'Aye',
+      artist: "Kelvin Sings",
+      avatar: "/images/aye.jpg",
+      audio: "/aye.mp3"
     },
     {
-      title: 'Afana Ceez',
-      artist: "kuno ayi",
-      avatar: "/images/abale.jpg",
-      audio: "/a3.mp3"
+      title: 'Mwana Wanu',
+      artist: "Gift Damson",
+      avatar: "/images/gift.jpg",
+      audio: "/mwanawanu.mp3"
     },
     {
-      title: 'Obhebha',
-      artist: "Mercah ft Namadingo",
-      avatar: "/images/mlw.jpg",
-      audio: "/a4.mp3"
+      title: 'Sizingatheke',
+      artist: "Clara Ngulube",
+      avatar: "/images/clara.jpg",
+      audio: "/sizingatheke.mp3"
     },
   ]
   const { setAudio } = useContext(AudioContext)
@@ -75,7 +75,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container space-x-5 w-full">
           {
             tracks.map(track => (
-              <Image loading='lazy' height={550} width={550} key={track.audio} className="w-30 h-30  md:w-45 md:h-45  cursor-pointer rounded-full" onClick={() => { setAudio(track), setPlaylist(tracks) }} src={track.avatar} alt="" />
+              <Image loading='lazy' height={560} width={560} key={track.audio} className="w-30 h-30  md:w-45 md:h-45  cursor-pointer rounded-full" onClick={() => { setAudio(track), setPlaylist(tracks) }} src={track.avatar} alt="" />
             ))
           }
         </div>
