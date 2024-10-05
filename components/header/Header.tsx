@@ -77,7 +77,7 @@ const Header = () => {
                                 <ul className="flex flex-col space-y-7 mt-6 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                                     {
                                         pages.map(page => (
-                                            <li onClick={() => {
+                                            <li key={page} onClick={() => {
                                                 setActivePage(page);
                                                 setShowMenu(!showMenu);
                                             }}>
