@@ -140,3 +140,8 @@ body {
   border-radius: 30px;
   background: linear-gradient(45deg, rgba(64, 233, 255, 0.7), rgba(0, 81, 255, 0.8), rgba(0, 26, 255, 0.9));
 }
+
+
+.cover-image-artists{
+ background-image: url('/images/clara.jpg');
+}

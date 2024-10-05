@@ -5,8 +5,13 @@ import Player from "../player/Player";
 import Image from "next/image";
 import Link from "next/link";
 
+const pages = [
+    "home", "artists", "charts", "genres", "podcasts"
+];
+
 const Header = () => {
     const [showMenu, setShowMenu] = useState(false);
+    const [activePage, setActivePage] = useState('home');
     return (
         <>
             <header>
@@ -68,38 +73,25 @@ const Header = () => {
 
                         {/* Mobile menu */}
                         {showMenu &&
-                            <div className="items-center h-screen z-100 justify-between w-full md:hidden" id="mobile-menu-2">
+                            <div className="items-center h-screen z-1000 justify-between w-full md:hidden" id="mobile-menu-2">
                                 <ul className="flex flex-col space-y-7 mt-6 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                                    <li>
-                                        <Link href="/"
-                                            className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white"
-                                            aria-current="page">Home
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/charts"
-                                            className="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Charts</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/artists"
-                                            className="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Artists</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/genres"
-                                            className="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Genres</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/podcasts"
-                                            className="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Podcasts</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/videos"
-                                            className="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Videos</Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/contacts"
-                                            className="block py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</Link>
-                                    </li>
+                                    {
+                                        pages.map(page => (
+                                            <li onClick={() => {
+                                                setActivePage(page);
+                                                setShowMenu(!showMenu);
+                                            }}>
+                                                <Link
+                                                    href={page === 'home' ? '/' : `/${page}`}
+                                                    className={`block py-2 pl-3 pr-4 text-white  rounded=2xl lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white 
+                                                        ${page === activePage ? "bg-purple-700" : null}
+                                                    `}>
+                                                    {page.toUpperCase()}
+                                                </Link>
+                                            </li>
+
+                                        ))
+                                    }
                                 </ul>
                             </div>
                         }

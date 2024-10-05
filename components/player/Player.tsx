@@ -26,6 +26,8 @@ const Player = () => {
                 setAudioProgress(progress);
             };
 
+            audio.addEventListener('ended', nextTrack);
+
             // Add the 'ended' and 'timeupdate' event listeners
             audio.addEventListener('timeupdate', handleTimeUpdate);
 
