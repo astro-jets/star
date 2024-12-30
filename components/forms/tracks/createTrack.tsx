@@ -45,9 +45,9 @@ export default function CreateTrackForm() {
             } else {
                 setErrorMessage(response.message || "Failed to create track.");
             }
-        } catch (error:unknown) {
+        } catch () {
             setErrorMessage(
-                error.response?.data?.message || "An error occurred while creating the track."
+                "An error occurred while creating the track."
             );
         } finally {
             setLoading(false);
