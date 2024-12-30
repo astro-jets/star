@@ -1,5 +1,5 @@
 "use client"
-import Image from "next/image";
+
 import { useEffect, useRef, useState } from "react";
 import Slider from "react-slider";
 import { BsChevronDoubleDown, BsChevronDoubleUp, BsDownload, BsPlay } from "react-icons/bs";
@@ -110,7 +110,8 @@ const Player = () => {
                                     min={0}
                                     max={100}
                                     value={audioProgress}
-                                    onChange={handleSeek}
+                                onChange={handleSeek}
+                                onAfterChange={handleSliderMouseUp}
                                     className="custom-slider" // You can add your custom class for styling
                                 />
                             </>
@@ -133,11 +134,11 @@ const Player = () => {
                         <button type="button" className="bg-white text-slate-900 dark:bg-slate-100 transition-all duration-500 dark:text-slate-700 flex-none -my-2 mx-auto w-20 h-20 rounded-full ring-1 ring-slate-900/5 shadow-md flex items-center justify-center" aria-label="Pause"
                             onClick={() => { setIsPlaying(!isPlaying) }}>
                             {isPlaying ?
-                                <svg width="30" height="32" fill="currentColor">
+                                <svg width="30" height="32" fill="currentColor" onClick={togglePlayPause}>
                                     <rect x="6" y="4" width="4" height="24" rx="2"></rect>
                                     <rect x="20" y="4" width="4" height="24" rx="2"></rect>
                                 </svg> :
-                                <p><BsPlay color="#03031a" size={35} /></p>
+                                <p onClick={togglePlayPause}><BsPlay color="#03031a" size={35} /></p>
                             }
                         </button>
                         <div className="flex-auto flex items-center justify-evenly">
