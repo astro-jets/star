@@ -19,16 +19,7 @@ export const ourFileRouter = {
     },
   })
     // Set permissions and file types for this FileRoute
-    .middleware(async ({ req }) => {
-      // This code runs on your server before upload
-      const user = await auth(req);
-
-      // If you throw, the user will not be able to upload
-      if (!user) throw new UploadThingError("Unauthorized");
-
-      // Whatever is returned here is accessible in onUploadComplete as `metadata`
-      return { userId: user.id };
-    })
+    .middleware(() => auth())
     .onUploadComplete(async ({ metadata, file }) => {
       // This code RUNS ON YOUR SERVER after upload
       console.log("Upload complete for userId:", metadata.userId);
@@ -41,7 +32,7 @@ export const ourFileRouter = {
 
   // This route handles audio upload
   audioUploader: f(["audio"])
-    .middleware(({ req }) => auth(req))
+    .middleware(() => auth())
     .onUploadComplete((data) => console.log("file", data)),
 } satisfies FileRouter;
 
