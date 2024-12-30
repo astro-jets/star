@@ -43,7 +43,7 @@ export default function CreateTrackForm() {
             } else {
                 setErrorMessage(response.message || "Failed to create track.");
             }
-        } catch (error: any) {
+        } catch (error: unknown) {
             console.log(error)
             setErrorMessage(
                 "An error occurred while creating the track."
