@@ -44,6 +44,7 @@ export default function CreateTrackForm() {
                 setErrorMessage(response.message || "Failed to create track.");
             }
         } catch (error: any) {
+            console.log(error)
             setErrorMessage(
                 "An error occurred while creating the track."
             );
@@ -52,8 +53,8 @@ export default function CreateTrackForm() {
         }
     };
 
-    const handleImagesUpload = (res: any) => { setImageFile(res[0].url) }
-    const handleAudiosUpload = (res: any) => { console.log("Audio Res => ", res); setAudioFile(res[0].url) }
+    const handleImagesUpload = (res: { [key: number]: { url: string } }) => { setImageFile(res[0].url) }
+    const handleAudiosUpload = (res: { [key: number]: { url: string } }) => { console.log("Audio Res => ", res); setAudioFile(res[0].url) }
 
     return (
         <div className="w-11/12 mx-auto">
