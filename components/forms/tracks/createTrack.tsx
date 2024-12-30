@@ -4,6 +4,7 @@ import { useState } from "react";
 import { createTrack } from "@/services/trackService";
 import { Track } from "@/types/Track";
 import { UploadButton } from "@/utils/uploadthing";
+import { } from 'axios'
 
 export default function CreateTrackForm() {
     const [loading, setLoading] = useState(false);
@@ -16,9 +17,6 @@ export default function CreateTrackForm() {
         e.preventDefault(); // Prevent the default form submission behavior
         setSuccessMessage("");
         setErrorMessage("");
-
-        // if (!audioFile) { setErrorMessage("No audio file found"); return; }
-        // if (!imageFile) { setErrorMessage("No image file found"); return; }
         const formData = new FormData(e.currentTarget);
         setLoading(true);
 
@@ -45,7 +43,7 @@ export default function CreateTrackForm() {
             } else {
                 setErrorMessage(response.message || "Failed to create track.");
             }
-        } catch () {
+        } catch (error: any) {
             setErrorMessage(
                 "An error occurred while creating the track."
             );
@@ -54,8 +52,8 @@ export default function CreateTrackForm() {
         }
     };
 
-    const handleImagesUpload = (res) => { setImageFile(res[0].url) }
-    const handleAudiosUpload = (res) => { console.log("Audio Res => ", res); setAudioFile(res[0].url) }
+    const handleImagesUpload = (res: any) => { setImageFile(res[0].url) }
+    const handleAudiosUpload = (res: any) => { console.log("Audio Res => ", res); setAudioFile(res[0].url) }
 
     return (
         <div className="w-11/12 mx-auto">
