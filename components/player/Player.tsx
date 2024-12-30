@@ -15,7 +15,6 @@ const Player = () => {
     const [showWholePlayer, setshowWholePlayer] = useState(true);
     const audioElement = useRef<HTMLAudioElement>(null);
     const { audio, nextTrack, prevTrack, playing, setPlaying } = useAudioStore();
-    const [isOpen, setIsOpen] = useState(true)
     const [audioProgress, setAudioProgress] = useState(0);
     const [audioPlayer, setAP] = useState<HTMLAudioElement>();
     const [seeking, setSeeking] = useState(false);
