@@ -3,7 +3,7 @@ import dbConnect from "@/utils/db";
 import Track from "@/models/Track";
 import { NextResponse } from "next/server";
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
     await dbConnect();
     try {
         const tracks = await Track.find({});
