@@ -2,35 +2,36 @@ import { createUploadthing, type FileRouter } from "uploadthing/next";
 
 const f = createUploadthing();
 
-const auth = () => ({ id: "fakeId" }); // Fake auth function
+// Simulated authentication function
+const auth = () => ({ id: "fakeId" }); 
 
-// FileRouter for your app, can contain multiple FileRoutes
-export const ourFileRouter = {
-  // Define as many FileRoutes as you like, each with a unique routeSlug
+// FileRouter for your app, defines routes for uploading files
+export const ourFileRouter: FileRouter = {
+  // Route for uploading images
   imageUploader: f({
     image: {
-      /**
-       * For full list of options and defaults, see the File Route API reference
-       * @see https://docs.uploadthing.com/file-routes#route-config
-       */
+      // File route configuration
       maxFileSize: "4MB",
       maxFileCount: 1,
     },
   })
-    // Set permissions and file types for this FileRoute
     .middleware(() => auth())
-    .onUploadComplete(async ({ metadata, file }) => {
-      // This code RUNS ON YOUR SERVER after upload
-            console.log("file url", file.url);
+    .onUploadComplete(async ({ file }) => {
+      // Code to execute after an upload is complete
+      console.log("Image uploaded to:", file.url);
 
-      // !!! Whatever is returned here is sent to the clientside `onClientUploadComplete` callback
-      return { uploadedBy: 'user'};
+      // Return metadata back to the client
+      return { uploadedBy: "user" };
     }),
 
-  // This route handles audio upload
+  // Route for uploading audio files
   audioUploader: f(["audio"])
     .middleware(() => auth())
-    .onUploadComplete((data) => console.log("file", data)),
-} satisfies FileRouter;
+    .onUploadComplete(({ file }) => {
+      // Code to execute after an upload is complete
+      console.log("Audio uploaded to:", file.url);
+    }),
+};
 
+// Export FileRouter type for use in the application
 export type OurFileRouter = typeof ourFileRouter;
