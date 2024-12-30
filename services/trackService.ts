@@ -9,7 +9,7 @@ export const getAllTracks = async () => {
 };
 
 // Create a track
-export const createTrack = async (track: unknown) => {
+export const createTrack = async (track: Track) => {
   const response = await axios.post("/tracks/new", track);
   return response.data;
 };
