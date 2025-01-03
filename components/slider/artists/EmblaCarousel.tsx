@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useContext, useEffect, useState } from 'react'
+import React, { , useEffect, useState } from 'react'
 import { EmblaOptionsType } from 'embla-carousel'
 import Autoplay from 'embla-carousel-autoplay'
 import useEmblaCarousel from 'embla-carousel-react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { useAudioStore } from '@/stores/MusicStore'
 import { Track } from '@/types/Track'
 import { getAllTracks } from '@/services/trackService'
@@ -19,7 +19,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const [emblaRef] = useEmblaCarousel(options, [Autoplay()])
   const [tracks, setTracks] = useState<Track[]>([]);
 
-  const { setAudio, setQueue, setPlaying } = useAudioStore()
+  const { setAudio, setQueue } = useAudioStore()
   useEffect(() => {
     async function fetchData() {
       const data = await getAllTracks();
