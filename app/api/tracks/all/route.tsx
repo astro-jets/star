@@ -7,13 +7,15 @@ export async function GET() {
     try {
         const tracks = await Track.find({});
 
-        const headers = {
-            "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
-            "Pragma": "no-cache",
-            "Expires": "0",
-        };
 
-        return NextResponse.json({ success: true, data: tracks }, { status: 200, headers });
+        return NextResponse.json({ success: true, data: tracks }, {
+            status: 200, headers: {
+                "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+                Pragma: "no-cache",
+                Expires: "0",
+                "Content-Type": "application/json",
+            },
+        });
     } catch (error) {
         console.log("error tu => ", error)
         return NextResponse.json({ success: false, error }, { status: 400 });
