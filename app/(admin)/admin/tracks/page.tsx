@@ -7,7 +7,7 @@ import TracksTable from '@/components/tables/tracks/tracksTable';
 
 const Tracks = async () => {
     const tracks: Track[] = await getAllTracks();
-    console.log("Nyimbo => ", tracks)
+    console.log("Nyimbo in production => ", tracks)
     // const handleDelete = async (id: string) => {
     //     await deleteTrack(id);
     //     setTracks((prev) => prev.filter((track) => track.id !== id));
