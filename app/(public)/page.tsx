@@ -19,12 +19,12 @@ export default function Home() {
       </section>
 
       {/* Featured Artists section */}
-      <section className="mt-8 w-full">
+      {/* <section className="mt-8 w-full">
         <h2 className="text-3xl font-bold mb-4">Featured Artists</h2>
         <div className="w-full md:h-[42vh] flex py-2 flex-col items-start overflow-hidden">
           <ArtistsSlider />
         </div>
-      </section>
+      </section> */}
 
       <section className="mt-8 w-full">
         <h2 className="text-3xl font-bold mb-4">Trending Now</h2>

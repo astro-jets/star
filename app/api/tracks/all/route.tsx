@@ -8,6 +8,7 @@ export async function GET() {
         const tracks = await Track.find({});
         return NextResponse.json({ success: true, data: tracks }, { status: 200 });
     } catch (error) {
+        console.log("error tu => ", error)
         return NextResponse.json({ success: false, error }, { status: 400 });
     }
 }
