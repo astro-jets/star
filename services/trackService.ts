@@ -4,7 +4,7 @@ import axios from "@/utils/axiosInstance";
 // I pray this works
 // Fetch all tracks
 export const getAllTracks = async () => {
-  const response = await axios.get("/tracks/all", {
+  const response = await axios.get(`/tracks/all?_t=${Date.now()}`, {
     headers: {
       "Cache-Control": "no-cache", // Tells the browser not to cache
       Pragma: "no-cache", // For compatibility with older browsers
