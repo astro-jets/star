@@ -13,16 +13,13 @@ const TracksTable = ({ tracks }: { tracks: Track[] }) => {
                         Name
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Title
+                        Artist
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Status
+                        Contributing Artists
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Role
-                    </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Email
+                        Genres
                     </th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Actions
@@ -41,26 +38,19 @@ const TracksTable = ({ tracks }: { tracks: Track[] }) => {
                                     <div className="text-sm font-medium text-gray-900">
                                         {track.title}
                                     </div>
-                                    <div className="text-sm text-gray-500">
-                                        {track.artist}
-                                    </div>
                                 </div>
                             </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm text-gray-900">Regional Paradigm Technician</div>
-                            <div className="text-sm text-gray-500">Optimization</div>
+                            <div className="text-sm text-gray-900">{track.artist}</div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                             <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                Active
+                                {track.featuring}
                             </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            Admin
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            jane.cooper@example.com
+                            {track.categories}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap  text-sm font-medium">
                             <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
